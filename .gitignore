@@ -4,3 +4,6 @@
 #Ignore binary files
 bin/
 obj/
+
+#ignore .vs file
+.vs
