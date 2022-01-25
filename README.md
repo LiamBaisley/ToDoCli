@@ -14,7 +14,7 @@ A simple CLI tool to manage your todo list in a console environment.
   * Run: dotnet tool uninstall --global ToDoCLI
 
 ## Other options
-   * The tool can also be run by navigating to ./ToDoCLI/ToDoCLI and running: dotnet run &ltarguments&gt
+   * The tool can also be run by navigating to ./ToDoCLI/ToDoCLI and running: dotnet run &lt arguments &gt
 
 # Available commands:
 * Add -T "<Title of todo>"
