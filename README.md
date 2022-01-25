@@ -15,6 +15,6 @@ A simple CLI tool to manage your todo list in a console environment.
 
 # Available commands:
 * Add -T "<Title of todo>"
- * Adds a todo to list
+   * Adds a todo to list
 * Complete
- * Lists todos in a navigational menu
+   * Lists todos in a navigational menu
