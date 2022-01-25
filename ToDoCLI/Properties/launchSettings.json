@@ -1,0 +1,7 @@
+{
+  "profiles": {
+    "ToDoCLI": {
+      "commandName": "Project"
+    }
+  }
+}

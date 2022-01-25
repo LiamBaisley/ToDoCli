@@ -1,0 +1,6 @@
+#Ignore DB files
+*.db
+
+#Ignore binary files
+bin/
+obj/
