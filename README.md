@@ -3,7 +3,9 @@ A simple CLI tool to manage your todo list in a console environment.
 
 # Installation
 ## Prerequisits:
-  -The dotnet runtime must be installed on the users PC
+/**
+  * The dotnet runtime must be installed on the users PC
+  */
 ## How to install?
   -Clone the repo
   -Navigate to the project root
