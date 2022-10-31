@@ -11,7 +11,7 @@ namespace ToDoCLI.Data.Models
     [Verb("Add", HelpText = "Adds a new todo to the list of Todos")]
     public class AddCommand: ICommand
     {
-        [Option('T', "Title", HelpText ="The title of the Todo")]
+        [Option('t', "Title", HelpText ="The title of the Todo")]
         public string Title { get; set; }
         public void Execute(TodoContext context)
         {
