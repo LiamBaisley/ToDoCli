@@ -9,7 +9,7 @@ using ToDoCLI.Models;
 
 namespace ToDoCLI.Data.Models
 {
-    [Verb("Complete", HelpText = "Lists Todo's so you can complete any that are finished.")]
+    [Verb("complete", HelpText = "Lists Todo's so you can complete any that are finished.")]
     public class CompleteCommand : ICommand
     {
         public void Execute(TodoContext context)

@@ -57,14 +57,6 @@ namespace ToDoCLI
 
         }
 
-        //public static void WriteTempMessage(string message)
-        //{
-        //    Console.Clear();
-        //    Console.WriteLine(message);
-        //    Thread.Sleep(1000);
-        //    WriteMenu();
-        //}
-
         public static void KeyHandler(List<Todo> Todos, TodoContext context)
         {
             int index = 0;

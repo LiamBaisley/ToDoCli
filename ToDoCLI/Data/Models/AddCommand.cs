@@ -8,7 +8,7 @@ using ToDoCLI.Data.Context;
 
 namespace ToDoCLI.Data.Models
 {
-    [Verb("Add", HelpText = "Adds a new todo to the list of Todos")]
+    [Verb("add", HelpText = "Adds a new todo to the list of Todos")]
     public class AddCommand: ICommand
     {
         [Option('t', "Title", HelpText ="The title of the Todo")]
