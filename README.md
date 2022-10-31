@@ -17,7 +17,7 @@ A simple CLI tool to manage your todo list in a console environment.
    * The tool can also be run by navigating to ./ToDoCLI/ToDoCLI and running: dotnet run \<arguments\>
 
 # Available commands:
-* Add -T "<Title of todo>"
+* add -t "<Title of todo>"
    * Adds a todo to list
-* Complete
+* complete
    * Lists todos in a navigational menu, use enter to complete a todo and ctrl+x to exit the menu.
