@@ -32,6 +32,17 @@ namespace ToDoCLI
 
         }
 
+        public static void WriteTodos(List<Todo> todos)
+        {
+            Console.Clear();
+            int counter = 0;
+            foreach (var todo in todos)
+            {
+                counter++;
+                Console.WriteLine($"{counter}  -   {todo.Title}");
+            }
+        }
+
         public static void WriteInitialMenu(List<Todo> todos)
         {
             Console.Clear();
