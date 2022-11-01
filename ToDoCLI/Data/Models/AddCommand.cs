@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ToDoCLI.Data.Context;
+using ToDoCLI.Models;
 
 namespace ToDoCLI.Data.Models
 {
@@ -15,9 +16,21 @@ namespace ToDoCLI.Data.Models
         public string Title { get; set; }
         public void Execute(TodoContext context)
         {
-            context.Todos.Add(new ToDoCLI.Models.Todo() { Title = Title });
-            context.SaveChanges();
-            Console.WriteLine("Todo added successfully!");
+            if (Title is not null)
+            {
+                context.Todos.Add(new Todo() { Title = Title });
+                context.SaveChanges();
+                Console.WriteLine("Todo added successfully!");
+            }
+            else
+            {
+                Console.WriteLine("Please add a Todo title and then press enter:");
+                Console.Write("Title -> ");
+                Title = Console.ReadLine();
+                context.Todos.Add(new Todo() { Title = Title });
+                context.SaveChanges();
+                Console.WriteLine("Todo added successfully!");
+            }
         }
     }
 }
