@@ -32,6 +32,24 @@ namespace ToDoCLI
 
         }
 
+        public static void WriteFolders(string[] folders, string selectedFolder)
+        {
+            Console.Clear();
+
+            foreach (string folder in folders)
+            {
+                if (folder == selectedFolder)
+                {
+                    Console.Write(">");
+                }
+                else
+                {
+                    Console.Write(" ");
+                }
+                Console.WriteLine(folder);
+            }
+        }
+
         public static void WriteTodos(List<Todo> todos)
         {
             Console.Clear();
@@ -105,6 +123,41 @@ namespace ToDoCLI
 
             Console.ReadKey();
 
+        }
+
+        public static int ProjectDirectorySelector(string[] folders)
+        {
+            int index = 0;
+            ConsoleKeyInfo keyInfo;
+            do
+            {
+                keyInfo = Console.ReadKey();
+
+                if (keyInfo.Key == ConsoleKey.DownArrow)
+                {
+                    if (index + 1 < folders.Length)
+                    {
+                        index++;
+                        Helpers.WriteFolders(folders, folders[index]);
+                    }
+                }
+                if (keyInfo.Key == ConsoleKey.UpArrow)
+                {
+                    if (index - 1 >= 0)
+                    {
+                        index--;
+                        Helpers.WriteFolders(folders, folders[index]);
+                    }
+                }
+                // Handle different action for the option
+                if (keyInfo.Key == ConsoleKey.Enter)
+                {
+                    return index;
+                }
+            } 
+            while (keyInfo.Key != ConsoleKey.X);
+
+            return -1;
         }
     }
 

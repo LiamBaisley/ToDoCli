@@ -13,6 +13,8 @@ namespace ToDoCLI.Models
     {
         public string Title { get; set; }
 
+        public string ProjectPath { get; set; }
+
         public List<Todo> Complete(Todo todo, TodoContext context)
         {
             context.Todos.Remove(todo);

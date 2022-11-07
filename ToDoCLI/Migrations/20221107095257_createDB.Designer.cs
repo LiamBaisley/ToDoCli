@@ -8,8 +8,8 @@ using ToDoCLI.Data.Context;
 namespace ToDoCLI.Migrations
 {
     [DbContext(typeof(TodoContext))]
-    [Migration("20220123071624_ensureCreate")]
-    partial class ensureCreate
+    [Migration("20221107095257_createDB")]
+    partial class createDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -22,6 +22,9 @@ namespace ToDoCLI.Migrations
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
+
+                    b.Property<string>("ProjectPath")
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("Title")
                         .HasColumnType("TEXT");
