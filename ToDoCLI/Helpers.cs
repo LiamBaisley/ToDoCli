@@ -187,7 +187,7 @@ namespace ToDoCLI
             foreach (var todo in todos)
             {
                 if (
-                    todo.ProjectPath is not null
+                    todo.ProjectPath != "noproject"
                     && currentDir.Substring(0, todo.ProjectPath.Length - 1) == todo.ProjectPath.Substring(0, todo.ProjectPath.Length - 1)
                 )
                 {
