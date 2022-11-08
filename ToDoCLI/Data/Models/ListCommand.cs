@@ -13,7 +13,7 @@ namespace ToDoCLI.Data.Models
     [Verb("list", HelpText = "Lists all the currently active Todos")]
     public class ListCommand : ICommand
     {
-        [Option('e', "All", HelpText = "Lists all active todos. not just folder specific todos")]
+        [Option('q', "All", HelpText = "Lists all active todos. not just folder specific todos")]
         public bool ListAll { get; set; }
         public void Execute(TodoContext context)
         {
@@ -32,7 +32,7 @@ namespace ToDoCLI.Data.Models
                 else
                 {
                     Console.WriteLine("No Todos for current project, here are all your active Todos");
-                    //Helpers.WriteTodos(context.Todos.ToList());
+                    Helpers.WriteTodos(context.Todos.ToList());
                 }
             }
         }
@@ -46,7 +46,7 @@ namespace ToDoCLI.Data.Models
             foreach (var todo in todos)
             {
                 if (
-                    todo.ProjectPath is not null 
+                    todo.ProjectPath != "nopath"
                     && currentDir.Substring(0, todo.ProjectPath.Length-1) == todo.ProjectPath.Substring(0, todo.ProjectPath.Length - 1)
                     )
                 {

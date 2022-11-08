@@ -36,7 +36,7 @@ namespace ToDoCLI.Data.Models
         {
             if (!ForProject)
             {
-                context.Todos.Add(new Todo() { Title = Title });
+                context.Todos.Add(new Todo() { Title = Title, ProjectPath = "nopath" });
                 context.SaveChanges();
                 Console.WriteLine("Todo added successfully!");
             }
@@ -53,7 +53,7 @@ namespace ToDoCLI.Data.Models
                 Console.WriteLine("Please add a Todo title and then press enter:");
                 Console.Write("Title -> ");
                 Title = Console.ReadLine();
-                context.Todos.Add(new Todo() { Title = Title });
+                context.Todos.Add(new Todo() { Title = Title, ProjectPath = "nopath"});
                 context.SaveChanges();
                 Console.WriteLine("Todo added successfully!");
             }
@@ -68,6 +68,7 @@ namespace ToDoCLI.Data.Models
             var directory = Directory.GetCurrentDirectory();
             var slash = @"\";
             var folders = directory.Split("\\");
+            Helpers.WriteFolders(folders, folders[0]);
             var folder = Helpers.ProjectDirectorySelector(folders);
             string projectDir = "";
             for (int i = 0; i <= folder; i++)
