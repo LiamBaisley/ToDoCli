@@ -18,7 +18,7 @@ namespace ToDoCLI.Data.Models
         [Option('t', "Title", HelpText ="The title of the Todo")]
         public string Title { get; set; }
 
-        [Option('q', "Project", HelpText = "Adds a todo for a specific project")]
+        [Option('l', "Project", HelpText = "Adds a todo for a specific project")]
         public bool ForProject { get; set; }
         public void Execute(TodoContext context)
         {
@@ -53,7 +53,7 @@ namespace ToDoCLI.Data.Models
                 Console.WriteLine("Please add a Todo title and then press enter:");
                 Console.Write("Title -> ");
                 Title = Console.ReadLine();
-                context.Todos.Add(new Todo() { Title = Title, ProjectPath = "nopath"});
+                context.Todos.Add(new Todo() { Title = Title, ProjectPath = "noproject"});
                 context.SaveChanges();
                 Console.WriteLine("Todo added successfully!");
             }
