@@ -76,11 +76,12 @@ namespace ToDoCLI
             if (todos.Any())
             {
                 Console.Clear();
+                Console.WriteLine("Index    -   Title   -   Project");
                 int counter = 0;
                 foreach (var todo in todos)
                 {
                     counter++;
-                    Console.WriteLine($"{counter}  -   {todo.Title}");
+                    Console.WriteLine($"{counter}  -   {todo.Title}     -   {todo.ProjectPath}");
                 }
             }
             else

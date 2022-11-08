@@ -36,7 +36,7 @@ namespace ToDoCLI.Data.Models
         {
             if (!ForProject)
             {
-                context.Todos.Add(new Todo() { Title = Title, ProjectPath = "nopath" });
+                context.Todos.Add(new Todo() { Title = Title, ProjectPath = "noproject" });
                 context.SaveChanges();
                 Console.WriteLine("Todo added successfully!");
             }
