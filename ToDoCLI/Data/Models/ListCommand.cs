@@ -13,7 +13,7 @@ namespace ToDoCLI.Data.Models
     [Verb("list", HelpText = "Lists all the currently active Todos")]
     public class ListCommand : ICommand
     {
-        [Option('q', "All", HelpText = "Lists all active todos. not just folder specific todos")]
+        [Option('e', "All", HelpText = "Lists all active todos. not just folder specific todos")]
         public bool ListAll { get; set; }
         public void Execute(TodoContext context)
         {
@@ -24,37 +24,9 @@ namespace ToDoCLI.Data.Models
             }
             else
             {
-                var todos = CheckDir(context);
-                if (todos.Any())
-                {
-                    Helpers.WriteTodos(todos);
-                }
-                else
-                {
-                    Console.WriteLine("No Todos for current project, here are all your active Todos");
-                    Helpers.WriteTodos(context.Todos.ToList());
-                }
+                var todos = Helpers.CheckDir(context);
+                Helpers.ListLocalTodoHandler(todos, context);
             }
-        }
-
-        private List<Todo> CheckDir(TodoContext context)
-        {
-            var todos = context.Todos.ToList();
-            var todoList = new List<Todo>();
-            var currentDir = Directory.GetCurrentDirectory();
-
-            foreach (var todo in todos)
-            {
-                if (
-                    todo.ProjectPath != "nopath"
-                    && currentDir.Substring(0, todo.ProjectPath.Length-1) == todo.ProjectPath.Substring(0, todo.ProjectPath.Length - 1)
-                    )
-                {
-                    todoList.Add(todo);
-                }
-            }
-
-            return todoList;
         }
     }
 }

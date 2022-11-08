@@ -15,11 +15,10 @@ namespace ToDoCLI.Models
 
         public string ProjectPath { get; set; }
 
-        public List<Todo> Complete(Todo todo, TodoContext context)
+        public void Complete(Todo todo, TodoContext context)
         {
             context.Todos.Remove(todo);
             context.SaveChanges();
-            return context.Todos.ToList<Todo>();
         }
 
         public void Add(Todo todo, TodoContext context)

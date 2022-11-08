@@ -2,7 +2,7 @@
   "profiles": {
     "ToDoCLI": {
       "commandName": "Project",
-      "commandLineArgs": "list"
+      "commandLineArgs": "complete"
     }
   }
 }
