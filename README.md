@@ -1,5 +1,5 @@
 # ToDoCli
-A simple CLI tool to manage your todo list in a console environment.
+A simple CLI tool to manage your todo list in a console environment. Now including support for project specific todos!
 
 # Installation
 ## Prerequisits:
@@ -19,12 +19,16 @@ A simple CLI tool to manage your todo list in a console environment.
 
 # Available commands:
 * list
-   * Lists the currently active todos
+   * Lists the currently active todos. Defaults to current project, if no todo's are found it lists all Todo's.
+   * ** Available Arguments **
+     + -e Lists all todos, bypasses default of listing only the todo's of your current project.
 * add
    * Adds a todo to list
    * **Available arguments**
      + -t \<Todo title text here\>
+     + -l Specifies that this todo is for a local project, and prompts you to select a project folder within your current directory.
 * complete
-   * Lists todos in a navigational menu, use enter to complete a todo and ctrl+x to exit the menu.
+   * Lists todos in a navigational menu, use enter to complete a todo and ctrl+x to exit the menu. Defaults to your local project and reverts to global todos if no local todos are found.
    * **Available arguments**
      + -i \<Todo index as seen in list command\>
+     + -e Overrides defaulting to local and uses all todos instead. 
