@@ -19,7 +19,7 @@ A simple CLI tool to manage your todo list in a console environment. Now includi
 
 ## How to uninstall?
 
-- Run: dotnet tool uninstall --global ToDoCLI
+- Run: dotnet tool uninstall --global todo
 
 ## Other options
 
