@@ -29,7 +29,7 @@ A simple CLI tool to manage your todo list in a console environment. Now includi
 
 - list
   - Lists the currently active todos. Defaults to current project, if no todo's are found it lists all Todo's.
-  - ** Available Arguments **
+  - **Available Arguments**
     - -e Lists all todos, bypasses default of listing only the todo's of your current project.
 - add
   - Adds a todo to list
