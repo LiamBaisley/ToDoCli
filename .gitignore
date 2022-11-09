@@ -7,3 +7,6 @@ obj/
 
 #ignore .vs file
 .vs
+
+#ignore package file
+nupkg/
