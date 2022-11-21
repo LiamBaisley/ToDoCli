@@ -123,14 +123,14 @@ namespace ToDoCLI
                 {
                     if (Todos.Count > 1)
                     { 
-                        Todos[index].Complete(Todos[index], context);
+                        Todos = Todos[index].Complete(Todos, index, context);
                         index = 0;
                         Todos.Remove(Todos[index]);
                         Helpers.WriteInitialMenu(Todos);
                     }
                     else
                     {
-                        Todos[index].Complete(Todos[index], context);
+                        Todos[index].Complete(Todos, index, context);
                         index = 0;
                         Todos.Remove(Todos[index]);
                         Console.WriteLine("No more todo's to complete!");
@@ -203,10 +203,10 @@ namespace ToDoCLI
         {
             if (todos.Any() && index > 0)
             {
-                context.Todos.Remove(todos[index -1]);
+                context.Todos.Remove(todos[index - 1]);
                 context.SaveChanges();
             }
-            else if(todos.Any() && index == 0)
+            else if (todos.Any() && index == 0)
             {
                 WriteInitialMenu(todos);
                 KeyHandler(todos, context);
@@ -216,6 +216,7 @@ namespace ToDoCLI
                 Console.WriteLine("No Todos for current project, here are all your active Todos");
 
                 WriteInitialMenu(context.Todos.ToList());
+                KeyHandler(context.Todos.ToList(), context);
             }
         }
 
