@@ -27,6 +27,8 @@ A simple CLI tool to manage your todo list in a console environment. Now includi
 
 # Available commands:
 
+-help
+  -Displays help information about the available commands.
 - list
   - Lists the currently active todos. Defaults to current project, if no todo's are found it lists all Todo's.
   - **Available Arguments**
