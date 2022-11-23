@@ -2,8 +2,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mime;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.DotNet.PlatformAbstractions;
 using ToDoCLI.Models;
 
 namespace ToDoCLI.Data.Context
@@ -18,7 +20,8 @@ namespace ToDoCLI.Data.Context
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite(@"Data Source=TodoDB.db;");
+            string path = ApplicationEnvironment.ApplicationBasePath;
+            optionsBuilder.UseSqlite($@"Data Source={path}/TodoDB.db;");
         }
     }
 }
